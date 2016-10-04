@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  giris: 2016-10-04
+  cikis: 2016-10-04
+  basvuru_id: 
+
+two:
+  giris: 2016-10-04
+  cikis: 2016-10-04
+  basvuru_id: 
