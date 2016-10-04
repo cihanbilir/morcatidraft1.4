@@ -1,0 +1,10 @@
+rails g scaffold_controller Basvuran —force-plural
+views/basvurans klasörünü sil (ya da alttakine -f)
+rails g bootstrap:themed Basvurans
+
+routes.rb
+resources :basvurans
+
+basvuran_controller
+before_action :require_user_signed_in
+permitted…
