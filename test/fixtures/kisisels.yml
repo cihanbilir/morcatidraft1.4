@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  basvuran_id: 
+  dogum_yili: 2016-10-04
+  meslek: MyString
+  is_durumu: 1
+  sosyal_guvence_durumu: 1
+  sosyal_guvence_durumu_ssk_free: MyString
+  sosyal_guvence_durumu_diger_free: MyString
+  il_ilce: MyString
+  medeni_durum: 1
+  evlilik_yili: 2016-10-04
+  cocuk_sayisi: 1
+  uyruk: 1
+  uyruk_diger_free: MyString
+  dili: MyString
+  cevirmen_ihtiyaci: 1
+  cevirmen_ihtiyaci_evet_free: MyString
+  engellilik_durumu: 1
+  engellilik_durumu_var_free: MyString
+  hamilelik: 1
+  ruhsal_destek: 1
+  ruhsal_destek_evet_free: MyString
+  intihar_girisimi: 1
+  notlar: MyText
+  hamilelik_evet_tarih: 2016-10-04
+  hamilelik_evet_doktor: 1
+
+two:
+  basvuran_id: 
+  dogum_yili: 2016-10-04
+  meslek: MyString
+  is_durumu: 1
+  sosyal_guvence_durumu: 1
+  sosyal_guvence_durumu_ssk_free: MyString
+  sosyal_guvence_durumu_diger_free: MyString
+  il_ilce: MyString
+  medeni_durum: 1
+  evlilik_yili: 2016-10-04
+  cocuk_sayisi: 1
+  uyruk: 1
+  uyruk_diger_free: MyString
+  dili: MyString
+  cevirmen_ihtiyaci: 1
+  cevirmen_ihtiyaci_evet_free: MyString
+  engellilik_durumu: 1
+  engellilik_durumu_var_free: MyString
+  hamilelik: 1
+  ruhsal_destek: 1
+  ruhsal_destek_evet_free: MyString
+  intihar_girisimi: 1
+  notlar: MyText
+  hamilelik_evet_tarih: 2016-10-04
+  hamilelik_evet_doktor: 1
