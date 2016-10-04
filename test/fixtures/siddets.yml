@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  basvuran_id: 
+  siddet_turu: 1
+  fiziksel_turu: 1
+  psikolojik_turu: 1
+  cinsel_turu: 1
+  ekonomik_turu: 1
+  dijital_turu: 1
+  takip_turu: 1
+  siddet_diger_free: MyString
+  notlar: MyText
+  uygulayan: 1
+  uygulayan_kurum_free: MyString
+  uygulayan_diger_free: MyString
+  uygulayan_partner_sure_yil: 1
+  basladigi_donem: 2016-10-04
+  basladigi_donem_diger_free: MyString
+  sikligi: MyString
+  arttigi_azaldigi_donemler: MyString
+  yaralanmalar_verdigi_zarar: MyString
+  darp_raporu_var: 1
+  baska_kanit_belge_var: 1
+
+two:
+  basvuran_id: 
+  siddet_turu: 1
+  fiziksel_turu: 1
+  psikolojik_turu: 1
+  cinsel_turu: 1
+  ekonomik_turu: 1
+  dijital_turu: 1
+  takip_turu: 1
+  siddet_diger_free: MyString
+  notlar: MyText
+  uygulayan: 1
+  uygulayan_kurum_free: MyString
+  uygulayan_diger_free: MyString
+  uygulayan_partner_sure_yil: 1
+  basladigi_donem: 2016-10-04
+  basladigi_donem_diger_free: MyString
+  sikligi: MyString
+  arttigi_azaldigi_donemler: MyString
+  yaralanmalar_verdigi_zarar: MyString
+  darp_raporu_var: 1
+  baska_kanit_belge_var: 1
