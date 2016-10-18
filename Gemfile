@@ -49,6 +49,10 @@ gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
+gem 'enum_help'
+
+gem 'dependent-fields-rails'
+gem 'underscore-rails'
 
 group :development do
   gem 'better_errors'

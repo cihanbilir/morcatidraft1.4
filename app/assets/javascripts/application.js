@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require turbolinks
 //= require bootstrap
-
-//= require_tree .
+//= require_tree 
+//= require dependent-fields

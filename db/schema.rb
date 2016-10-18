@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004205442) do
+ActiveRecord::Schema.define(version: 20161017212952) do
 
   create_table "basvurans", force: true do |t|
     t.string   "isim"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20161004205442) do
     t.integer  "hamilelik_evet_doktor"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "intihar_girisimi_evet_free"
   end
 
   add_index "kisisels", ["basvuran_id"], name: "index_kisisels_on_basvuran_id"

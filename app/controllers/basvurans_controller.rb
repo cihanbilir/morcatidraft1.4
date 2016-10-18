@@ -11,11 +11,13 @@ class BasvuransController < ApplicationController
   # GET /basvurans/1
   # GET /basvurans/1.json
   def show
+    session[:basvuran_id] = @basvuran.id
   end
 
   # GET /basvurans/new
   def new
     @basvuran = Basvuran.new
+    session.delete(:basvuran_id)
   end
 
   # GET /basvurans/1/edit
@@ -29,11 +31,11 @@ class BasvuransController < ApplicationController
     
     @basvuran.kod = (Basvuran.count+10001).to_s
     @basvuran.user = current_user
-
+    
     respond_to do |format|
       if @basvuran.save
-        format.html { redirect_to @basvuran, notice: 'Basvuran was successfully created.' }
-        format.json { render :show, status: :created, location: @basvuran }
+        session[:basvuran_id] = @basvuran.id
+        format.html { redirect_to new_kisisel_url, notice: 'Başvuru başarıyla kaydedildi.' }
       else
         format.html { render :new }
         format.json { render json: @basvuran.errors, status: :unprocessable_entity }
@@ -73,7 +75,6 @@ class BasvuransController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def basvuran_params
-      #params.fetch(:basvuran, {})
       params.require(:basvuran).permit(:isim, :soyisim, :telefon, :mail)
     end
 end

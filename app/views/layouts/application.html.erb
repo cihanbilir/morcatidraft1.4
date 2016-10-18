@@ -1,17 +1,101 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Morcatidraft1</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-<meta name="viewport" content="width=device-width, initial-scale=1"/></head>
+  <head>
+    <title>Morcatidraft1</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  </head>
 <body>
-<%= render partial: "elements/navbar" %>
-<%= bootstrap_flash %>
+    
+    <%= render partial: "elements/navbar" %>
+    
+    <div id="wrapper">
+        
+        <% if user_signed_in? %>
+        
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                    </li>
+                    <li class="sidebar-brand">
+                        <a href="/">
+                            Tüm Başvurular
+                        </a>
+                    </li>
+                    <li class="sidebar-brand">
+                        <a href="/basvurans/new">
+                            Yeni Başvuru
+                        </a>
+                    </li>
+                    <hr>
+                    
+                    <% if !session[:basvuran_id].nil? %>
+                        <li>
+                            <a href="/basvurans/<%= session[:basvuran_id]%>">1. Giriş</a>
+                        </li>
+                        <li>
+                            <a href="/kisisels/<%= session[:basvuran_id]%>">2. Kişisel bilgiler</a>
+                        </li>
+                        <li>
+                            <a href="#">3. Dayanışma bilgileri</a>
+                        </li>
+                        <li>
+                            <a href="#">4. Maruz kaldığı şiddet</a>
+                        </li>
+                        <li>
+                            <a href="#">5. Destek aldığı kurumlar</a>
+                        </li>
+                        <li>
+                            <a href="#">6. Hukuki destek</a>
+                        </li>
+                        <li>
+                            <a href="#">7. Psikolojik destek</a>
+                        </li>
+                        <li>
+                            <a href="#">...</a>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            
+        <% end %>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        </br>
+                        </br>
+                        <%= bootstrap_flash %>
+                        <%= yield %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 
 
-<%= yield %>
 
 </body>
 </html>
+<script>
+    $(document).ready(function() {
+        DependentFields.bind()
+    });
+</script>

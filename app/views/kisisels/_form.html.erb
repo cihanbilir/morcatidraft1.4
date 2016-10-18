@@ -1,0 +1,56 @@
+<%= simple_form_for @kisisel, defaults: { disabled: is_display }, html: { class: 'form-horizontal' }, wrapper: :horizontal_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean: :horizontal_boolean } do |f| %>
+
+    <%= f.association :basvuran, as: :hidden %>
+    <%= f.input :basvuran_kod, disabled: true, input_html: {value: @kisisel.basvuran.kod} %>
+    <%= f.input :dogum_yili, as: :string, input_html: {type: :date} %>
+    <%= f.input :meslek %>
+    <%= f.input :is_durumu, collection: OptionHelper::IS_DURUMU %>
+    <%= f.input :sosyal_guvence_durumu, collection: OptionHelper::SOSYAL_GUVENCE %>
+    <div class="js-dependent-fields" data-select-id='kisisel_sosyal_guvence_durumu' data-option-value='5|SSK' >
+      <%= f.input :sosyal_guvence_durumu_ssk_free %>
+    </div>
+    <div class="js-dependent-fields" data-select-id='kisisel_sosyal_guvence_durumu' data-option-value='6|Diğer' >
+      <%= f.input :sosyal_guvence_durumu_diger_free %>
+    </div>
+    <%= f.input :il_ilce %>
+    <%= f.input :medeni_durum, collection: OptionHelper::MEDENI_DURUM %>
+    <%= f.input :evlilik_yili, as: :string, input_html: {type: :date} %>
+    <%= f.input :cocuk_sayisi %>
+    <%= f.input :uyruk, collection: {"T.C." => 0, "Diğer" => 1} %>
+    <div class="js-dependent-fields" data-select-id='kisisel_uyruk' data-option-value='1|Diğer' >
+      <%= f.input :uyruk_diger_free %>
+    </div>
+    <%= f.input :dili %>
+    <%= f.input :cevirmen_ihtiyaci, collection: {"Evet" => 1, "Hayır" => 0} %>
+    <div class="js-dependent-fields" data-select-id='kisisel_cevirmen_ihtiyaci' data-option-value='1|Evet' >
+      <%= f.input :cevirmen_ihtiyaci_evet_free %>
+    </div>
+    <%= f.input :engellilik_durumu, collection: {"Yok" => 0, "Var" => 1} %>
+    <div class="js-dependent-fields" data-select-id='kisisel_engellilik_durumu' data-option-value='1|Var' >
+      <%= f.input :engellilik_durumu_var_free %>
+    </div>
+    <%= f.input :hamilelik, collection: {"Evet" => 1, "Hayır" => 0} %>
+    <div class="js-dependent-fields" data-select-id='kisisel_hamilelik' data-option-value='1|Evet' >
+      <%= f.input :hamilelik_evet_tarih, as: :string, input_html: {type: :date} %>
+      <%= f.input :hamilelik_evet_doktor, collection: {"Evet" => 1, "Hayır" => 0} %>
+    </div>
+    <%= f.input :ruhsal_destek, collection: {"Evet" => 1, "Hayır" => 0} %>
+    <div class="js-dependent-fields" data-select-id='kisisel_ruhsal_destek' data-option-value='1|Evet' >
+      <%= f.input :ruhsal_destek_evet_free %>
+    </div>
+    <%= f.input :intihar_girisimi, collection: {"Evet" => 1, "Hayır" => 0} %>
+    <div class="js-dependent-fields" data-select-id='kisisel_intihar_girisimi' data-option-value='1|Evet' >
+      <%= f.input :intihar_girisimi_evet_free %>
+    </div>
+    <%= f.input :notlar %>
+    
+    <% if !is_display %>
+      <div class="form-group">
+        <div class='col-sm-offset-3 col-sm-9'>
+          <%= f.button :submit, class: 'btn-primary' %>
+          <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                      kisisels_path, class: 'btn btn-default' %>
+        </div>
+      </div>
+    <% end %>
+<% end %>

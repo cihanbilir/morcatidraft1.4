@@ -8,3 +8,4 @@ resources :basvurans
 basvuran_controller
 before_action :require_user_signed_in
 permitted…
+
